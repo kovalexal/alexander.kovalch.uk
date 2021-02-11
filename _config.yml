@@ -11,28 +11,17 @@
 # If you need help with YAML syntax, here are some quick references for you: 
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
 
 # Build settings
-theme: minima
+#theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.22.0"
+minimal_mistakes_skin: "dirt"
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+
+# Include to processing
+include: ["_pages"]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -53,3 +42,99 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+locale: "en-US"
+timezone: Europe/Moscow
+search: true
+title: Alexander Kovalchuk's Blog
+#subtitle: "Another one blog on Machine Learning and Computer Science"
+name: Alexander Kovalchuk
+#logo: "/assets/images/favicon.ico"
+email: alexander@kovalch.uk
+description: >- # this means to ignore newlines until "baseurl:"
+  This is a personal blog on Machine Learning and Computer Science.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+repository: "kovalexal/alexander.kovalch.uk"
+twitter_username: kovalexal
+github_username:  kovalexal
+
+social:
+  type: Person # Person or Organization (defaults to Person)
+  name: Alexander Kovalchuk # If the user or organization name differs from the site's name
+  links:
+    - "https://twitter.com/kovalexal"
+    - "https://instagram.com/kovalexal"
+    - "https://linkedin.com/in/kovalexal"
+    - "https://t.me/kovalexal"
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-VZSHCRF6S1"
+    anonymize_ip: false # default
+
+author:
+  name: "Alexander Kovalchuk"
+  avatar   : "/assets/images/me.jpg"
+  bio      : "Machine Learning Engineer" # Note: Markdown is allowed
+  location: "Moscow, Russia"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/kovalexal"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/kovalexal"
+    - label: "Telegram"
+      icon: "fab fa-fw fa-telegram"
+      url: "https://t.me/kovalexal"
+    - label: "E-Mail"
+      icon: "fa fa-envelope"
+      url: "mailto:alexander@kovalch.uk"
+    - label: "RSS"
+      icon: "fa fa-rss"
+      url: "/feed.xml"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      classes: wide
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# sidebar:
+#   - title: "Title"
+#     image: http://placehold.it/350x250
+#     image_alt: "image"
+#     text: "Some text here."
+#   - title: "Another Title"
+#     text: "More text here."
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "kovalexal"
+
+atom_feed:
+  hide: true
