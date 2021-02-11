@@ -60,7 +60,7 @@ email: alexander@kovalch.uk
 description: >- # this means to ignore newlines until "baseurl:"
   This is a personal blog on Machine Learning and Computer Science.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://alexander.kovalch.uk" # the base hostname & protocol for your site, e.g. http://example.com
 repository: "kovalexal/alexander.kovalch.uk"
 twitter_username: kovalexal
 github_username:  kovalexal
