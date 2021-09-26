@@ -6,8 +6,11 @@ classes: wide
 ---
 ## Career
 
-### Sberbank (2018 - Now)
-I currently work as a Data Scientist at Sberbank. I’ve managed to work with several teams of the Corporate Investment Banking Unit, solving tasks of lead generation, demand forecasting, data analytics, automated document analysis. My key contributions are:
+### Prequel (2021 - Now)
+I currently work as RnD Deep Learning Engineer at [Prequel Inc.](https://prequel.app). Here I am developing deep learning algorithms for various computer vision tasks.
+
+### Sberbank (2018 - 2021)
+I worked as a Data Scientist at Sberbank. I’ve managed to work with several teams of the Corporate Investment Banking Unit, solving tasks of lead generation, demand forecasting, data analytics, automated document analysis. My key contributions are:
 
 - Created and automated analytical dashboards of corporate chats
 - Created an [open-source fork](https://github.com/kovalexal/tomita-parser-spark) of [tomita-parser](https://yandex.ru/dev/tomita/) - the tool for automatic extraction of structured facts from text, which now works over Apache Spark framework. I also used it to automate the extraction of corporate customers rent objects
