@@ -30,5 +30,3 @@ I am passionate about Deep Learning, Software Engineering and their applications
 {: style=" text-align: center;"}
 
 This website was built after my graduation from [MADE Big Data Academy](https://data.mail.ru) in order to continue my self-education, structure and share my knowledge with others.
-
-I want to thank [Radoslav Neychev](https://www.linkedin.com/in/radoslav-neychev/) for the idea of creating my own blog.
