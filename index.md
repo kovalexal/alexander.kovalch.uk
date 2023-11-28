@@ -3,8 +3,8 @@ layout: splash
 date: 2021-02-11 22:53:00 +0300
 
 about_me:
-  - image_path: /assets/images/me_relaxed.jpg
-    alt: "Me, relaxed"
+  - image_path: /assets/images/me.jpeg
+    alt: "Me"
     title: "About me"
     excerpt: 'My name is Alexander Kovalchuk, and I am a Machine Learning Engineer.
     
@@ -12,7 +12,7 @@ about_me:
     I am passionate about Deep Learning, Software Engineering and their applications, especially in the field of Computer Vision and Natural Language Processing.'
 ---
 
-<!-- ![](/assets/images/me_relaxed.jpg) -->
+<!-- ![](/assets/images/me.jpeg) -->
 <!-- {: style="float: left; width:300px;  margin-right: 10px;"} -->
 
 <!-- ### About me

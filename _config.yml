@@ -82,9 +82,9 @@ analytics:
 
 author:
   name: "Alexander Kovalchuk"
-  avatar   : "/assets/images/me.jpg"
+  avatar   : "/assets/images/me.jpeg"
   bio      : "Machine Learning Engineer" # Note: Markdown is allowed
-  location: "Moscow, Russia"
+  location: "Budva, Montenegro"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
