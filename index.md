@@ -26,7 +26,7 @@ I am passionate about Deep Learning, Software Engineering and their applications
 
 {% include feature_row id="about_me" type="left" %}
 
-### About this site
+<!-- ### About this site
 {: style=" text-align: center;"}
 
-This website was built after my graduation from [MADE Big Data Academy](https://data.mail.ru) in order to continue my self-education, structure and share my knowledge with others.
+This website was built after my graduation from [MADE Big Data Academy](https://data.mail.ru) in order to continue my self-education, structure and share my knowledge with others. -->
