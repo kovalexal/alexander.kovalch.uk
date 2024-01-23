@@ -1,0 +1,21 @@
+{
+    "name": "alexander.kovalch.uk",
+    "build": {
+        "target": "dev",
+        "dockerfile": "../Dockerfile.dev",
+        "args": {}
+    },
+    "mounts": [],
+    "customizations": {
+        "vscode": {
+            "extensions": []
+        }
+    },
+    "remoteEnv": {
+        "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/scripts"
+    },
+    "forwardPorts": [
+        4000
+    ],
+    "runArgs": []
+}

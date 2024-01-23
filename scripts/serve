@@ -1,0 +1,3 @@
+#!/bin/sh
+
+(cd /workspaces/alexander.kovalch.uk && bundle exec jekyll serve)

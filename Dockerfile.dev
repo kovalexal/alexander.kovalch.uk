@@ -1,0 +1,9 @@
+FROM ruby:3.2.3-alpine3.19 as dev
+
+# Install base os packages
+RUN apk add build-base
+
+# Install jekyll packages
+RUN --mount=target=Gemfile,source=Gemfile \
+    --mount=target=Gemfile.lock,source=Gemfile.lock \
+    bundle install
