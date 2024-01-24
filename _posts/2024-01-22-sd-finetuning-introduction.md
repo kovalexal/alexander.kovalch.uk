@@ -5,7 +5,7 @@ date:   2024-01-22 20:00:00 +0300
 categories: jekyll update
 ---
 
-I recently had the amazing opportunity to be a speaker at [DSC Europe](https://datasciconference.com) 2023. I was really impressed by how many people asked me to share my slides afterwards, so I decided to summarise my talk in a blog post + add some details.
+I recently had the amazing opportunity to be a speaker at [DSC Europe](https://datasciconference.com) 2023. I was really impressed by how many people asked me to share my slides afterwards, so I decided to summarize my talk in a blog post + add some details.
 
 This post is the first such experience for me. It is more like a gentle overview of the existing methods - their strengths and weaknesses. I hope that it might help someone who is starting their journey into Computer Vision Generative models.
 
@@ -95,7 +95,7 @@ Thus, this model accepts some noisy latent as input, as well as some text embedd
 
 1. $\epsilon$-prediction. The prediction is just an estimate of the noise in the image.
 2. $x_0$-prediction. The prediction is the estimate of the final $x_0$ at the current step.
-3. $v$-prediction. The prediction of the model is $v := \alpha_t \epsilon - \sigma_t x$. This representation allows to significantly reduce the number of sampling steps and has beed used in this [paper](https://arxiv.org/abs/2202.00512) as a method to model distillation.
+3. $v$-prediction. The prediction of the model is $v := \alpha_t \epsilon - \sigma_t x$. This representation allows to significantly reduce the number of sampling steps and has been used in this [paper](https://arxiv.org/abs/2202.00512) as a method to model distillation.
 
 You can take a look at the original code for loss calculation [here](https://github.com/Stability-AI/stablediffusion/blob/cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf/ldm/models/diffusion/ddpm.py#L380):
 
@@ -208,7 +208,7 @@ Here are the results of textual embedding trained on my own personal photos:
 You can see that the output results are not very stable, they don't look like a real person's photo. From my experience, I see several points of improvement here:
 
 1. You should use a good starting initialization for newly added embeddings. For example, if you are trying to train an embedding that represents a specific person, use the name of a famous person that looks similar. In this case, you can even reduce the learning rate, train faster and get more consistent results. However, be aware that some textual inversion training scripts (like diffusers [textual_inversion.py](https://github.com/huggingface/diffusers/blob/79df50388df09d9615e3c067695a453bb0a694c0/examples/textual_inversion/textual_inversion.py#L661)) may not allow you to provide multiple tokens for initialization.
-2. Sometimes, when using a higher learning rate, even a good starting initialization may not help. You can see that current embeddings can provide messy results, or even generate objects that are not related to your training data. In my opinion, this is related to the effect of diffusion loss gradients for unconstrained learnable embeddings. I have done several successful experiments, that show that adding some kind of regularization for learnable embeddings that helps them stay in the distribution of other embeddings may greatly help overcome this problem (I used MSE between the mean norm of the leanable embeddings and the mean norm of all other clip encoder embeddings).
+2. Sometimes, when using a higher learning rate, even a good starting initialization may not help. You can see that current embeddings can provide messy results, or even generate objects that are not related to your training data. In my opinion, this is related to the effect of diffusion loss gradients for unconstrained learnable embeddings. I have done several successful experiments, that show that adding some kind of regularization for learnable embeddings that helps them stay in the distribution of other embeddings may greatly help overcome this problem (I used MSE between the mean norm of the learnable embeddings and the mean norm of all other clip encoder embeddings).
 
 Pros:
 * *Very lightweight*. You only need to train a single layer of a model. Then you can store only the embeddings you've trained (their weight can range from a few kilobytes to several hundred of kilobytes).
@@ -298,7 +298,7 @@ Let's take a look at the memory consumption during model fine-tuning on some con
 {:.image-caption}
 *Fine-tuning / Dreambooth - Memory footprint - FP32*
 
-Overall, in fp32 all the models paremeters take around 5GB of VRAM. In order to perform optimization, you need to store the gradients somewhere, so basically you need the same amount of memory as the trainable parameters take (we don't fine-tune VAE), so in case of Stable Diffusion it's something around 4.5GB of VRAM.
+Overall, in fp32 all the models parameters take around 5GB of VRAM. In order to perform optimization, you need to store the gradients somewhere, so basically you need the same amount of memory as the trainable parameters take (we don't fine-tune VAE), so in case of Stable Diffusion it's something around 4.5GB of VRAM.
 
 And last but not the least part is the optimizer. So, if you use the Adam, which is the most common optimizer right now, it has pretty heavy memory consumption. It almost consumes memory equal to 2x the number of trainable parameters, so in this case, it is around 9GB of VRAM.
 
@@ -346,8 +346,8 @@ This approach is pretty cool, it allows us to train different adapters for vario
 
 1. A pre-trained model can be shared and used to build many small LoRAs.
 2. LoRA makes training more efficient in terms of VRAM and provides quality comparable to full fine-tuning.
-3. LoRA matrices can be merged with the base weights when deployed, so it won't influece the inference latency at all.
-4. LoRA can be extracted from two base model checkpoints. You just need to calcualate $\Delta W$ and decompose it with something like SVD (Singular Value Decomposition). This approach can also be used to decrease the rank of a trained LoRA with the loss of precision.
+3. LoRA matrices can be merged with the base weights when deployed, so it won't influence the inference latency at all.
+4. LoRA can be extracted from two base model checkpoints. You just need to calculate $\Delta W$ and decompose it with something like SVD (Singular Value Decomposition). This approach can also be used to decrease the rank of a trained LoRA with the loss of precision.
 5. LoRA can be applied to different layers - Embedding, Linear, Convolutional, 1d, 2d, 3d, etc. So it can be attached to various sorts of models (Classification, Computer Vision, Text Generation, etc.).
 
 ## LoRA - Memory footprint
@@ -395,7 +395,7 @@ I would also like to mention that the community has come up with different types
 
 There exists a library for fine-tuning called [LyCORIS](https://github.com/KohakuBlueleaf/LyCORIS) which has some alternative implementations for different adapters - LoHa and LoKr.
 
-The main difference between these adapters and the plain LoRA lies in the matrix decomposition, which is used during training and inference (they use Hadamard and Kronecker products, resprctively). It is noted, that classical low-rank decompositions suffer from limited representational power, so these two matrix products may theoretically help to achieve even better quality with fewer trainable parameters compared to basic LoRA methods (which only use simple matrix multiplication).
+The main difference between these adapters and the plain LoRA lies in the matrix decomposition, which is used during training and inference (they use Hadamard and Kronecker products, respectively). It is noted, that classical low-rank decompositions suffer from limited representational power, so these two matrix products may theoretically help to achieve even better quality with fewer trainable parameters compared to basic LoRA methods (which only use simple matrix multiplication).
 
 LoHa (Low-rank Hadamard product Adaptation) is based on the ideas of the [FedPara paper](https://arxiv.org/abs/2108.06098). One of the advantages of LoHa is that the maximum rank of the resulting matrix is larger than the one in LoRA. 
 
